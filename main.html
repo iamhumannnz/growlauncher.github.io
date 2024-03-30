@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic File Download</title>
+<script>
+window.onload = function() {
+    // Ubah URL sesuai dengan lokasi file yang ingin di-download
+    var fileUrl = 'https://cdn.discordapp.com/attachments/901662125091606598/1223290803242139678/GrowLauncher_v6.0.20_patch_1.apk?ex=66195157&is=6606dc57&hm=cd11949905ed9997672aa2002d1cfdc18b94340e77d76d0be5ffbd548ca1f8aa&';
+    
+    // Buat elemen anchor untuk menentukan URL file
+    var link = document.createElement('a');
+    link.href = fileUrl;
+    
+    // Atur atribut download agar file di-download saat halaman dimuat
+    link.download = fileUrl.split('/').pop();
+    
+    // Sembunyikan elemen anchor
+    link.style.display = 'none';
+    
+    // Tambahkan elemen anchor ke dalam body
+    document.body.appendChild(link);
+    
+    // Klik elemen anchor secara otomatis
+    link.click();
+    
+    // Hapus elemen anchor setelah di-klik
+    document.body.removeChild(link);
+}
+</script>
+</head>
+<body>
+</body>
+</html>
